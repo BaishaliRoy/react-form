@@ -10,7 +10,7 @@ export default function Popup() {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        Launch static backdrop modal
+        click
       </Button>
 
       <Modal
@@ -22,15 +22,11 @@ export default function Popup() {
         <Modal.Header closeButton>
           <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          I will not close if you click outside me. Don't even try to press
-          escape key.
-        </Modal.Body>
+        <Modal.Body></Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>

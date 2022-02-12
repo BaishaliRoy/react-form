@@ -72,12 +72,12 @@ export default function App(props) {
 
     console.log(JSON.stringify(data));
 
-    props.history.push("/hello", { name: data.name });
+    props.history.push("/confirm", { name: data.name });
 
     //
     // createAccount().then((data) => {
     //   if (!data.err) {
-    //      redirection to hello
+    //      redirection to confirm
     //   } else {
     //     setError(true);
     //   }
@@ -88,18 +88,18 @@ export default function App(props) {
     <Form
       onSubmit={handleSubmit}
       render={(formRenderProps) => (
-        <form onSubmit={formRenderProps.onSubmit}>
+        <form className="appForm" onSubmit={formRenderProps.onSubmit}>
           <h1>OneClick Buddy</h1>
+          <div className="fdiv">
+            <Field
+              label="Mobile"
+              name="mobile"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator, mobileValidator]}
+            />
 
-          <Field
-            label="Mobile"
-            name="mobile"
-            fieldType=""
-            component={CustomInput}
-            validator={[requiredValidator, mobileValidator]}
-          />
-
-          {/* <Field
+            {/* <Field
             label="Email"
             name="email"
             fieldType="email"
@@ -107,13 +107,14 @@ export default function App(props) {
             validator={[requiredValidator, emailValidator]}
           /> */}
 
-          <Field
-            label="Password"
-            name="password"
-            fieldType="password"
-            component={CustomInput}
-            validator={requiredValidator}
-          />
+            <Field
+              label="Password"
+              name="password"
+              fieldType="password"
+              component={CustomInput}
+              validator={requiredValidator}
+            />
+          </div>
 
           <Field
             label="Name"
@@ -124,36 +125,70 @@ export default function App(props) {
           />
 
           <Field
-            label="Address Line"
+            label="Home Address Line"
             name="addr"
             fieldType=""
             component={CustomInput}
             validator={[requiredValidator]}
           />
+          <div className="fdiv">
+            <Field
+              label="Zip Code"
+              name="zcode"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator, zipValidator]}
+            />
+
+            <Field
+              label="State"
+              name="state"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator]}
+            />
+
+            <Field
+              label="Country"
+              name="country"
+              component={CustomDropDown}
+              options={countries}
+              validator={requiredValidator}
+            />
+          </div>
 
           <Field
-            label="Zip Code"
-            name="zcode"
-            fieldType=""
-            component={CustomInput}
-            validator={[requiredValidator, zipValidator]}
-          />
-
-          <Field
-            label="State"
-            name="state"
+            label="Office Address Line"
+            name="oaddr"
             fieldType=""
             component={CustomInput}
             validator={[requiredValidator]}
           />
+          <div className="fdiv">
+            <Field
+              label="Office Zip Code"
+              name="ozcode"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator, zipValidator]}
+            />
 
-          <Field
-            label="Country"
-            name="country"
-            component={CustomDropDown}
-            options={countries}
-            validator={requiredValidator}
-          />
+            <Field
+              label="State"
+              name="ostate"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator]}
+            />
+
+            <Field
+              label="Country"
+              name="ocountry"
+              component={CustomDropDown}
+              options={countries}
+              validator={requiredValidator}
+            />
+          </div>
 
           <Field
             label="I accept the terms and conditions "
