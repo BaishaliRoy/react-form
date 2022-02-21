@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
 import { Form, Field } from "@progress/kendo-react-form";
 import { Input } from "@progress/kendo-react-inputs";
+import App from "./App";
 
 import Otp from "./Otp";
 
@@ -44,6 +45,8 @@ export default function First(props) {
     `);
 
     event.preventDefault();
+    sessionStorage.setItem("mobile", data.mobile);
+
     setShow(true);
 
     console.log(JSON.stringify(data));

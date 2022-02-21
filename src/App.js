@@ -5,6 +5,19 @@ import { DropDownList } from "@progress/kendo-react-dropdowns";
 
 import countries from "./countries";
 
+const MobileInput = ({ fieldType, ...others }) => {
+  return (
+    <div>
+      <Input
+        type={fieldType}
+        {...others}
+        value={sessionStorage.getItem("mobile")}
+        disabled
+      />
+      <ValidationMessage {...others} />
+    </div>
+  );
+};
 const CustomInput = ({ fieldType, ...others }) => {
   return (
     <div>
@@ -72,6 +85,8 @@ export default function App(props) {
 
     console.log(JSON.stringify(data));
 
+    sessionStorage.removeItem("mobile");
+
     props.history.push("/confirm", { name: data.name });
 
     //
@@ -95,8 +110,7 @@ export default function App(props) {
               label="Mobile"
               name="mobile"
               fieldType=""
-              component={CustomInput}
-              validator={[requiredValidator, mobileValidator]}
+              component={MobileInput}
             />
 
             {/* <Field
