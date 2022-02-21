@@ -45,7 +45,7 @@ export default function Login(props) {
     setShow(true);
     sessionStorage.setItem("mobile", data.mobile);
 
-    props.history.push("/register-yourself");
+    props.history.push("/your-profile");
   };
   const navigate = () => {
     event.preventDefault();

@@ -87,7 +87,7 @@ export default function Profile(props) {
 
     sessionStorage.removeItem("mobile");
 
-    props.history.push("/confirm", { name: data.name });
+    props.history.push("/save-confirm", { name: data.name });
 
     //
     // createAccount().then((data) => {
@@ -121,54 +121,54 @@ export default function Profile(props) {
             validator={[requiredValidator, emailValidator]}
           /> */}
 
-            <Field
+            {/* <Field
               label="Password"
               name="password"
               fieldType="password"
               component={CustomInput}
               validator={requiredValidator}
+              
+            /> */}
+
+            <Field
+              label="Name"
+              name="name"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator]}
             />
           </div>
 
-          <Field
-            label="Name"
-            name="name"
-            fieldType=""
-            component={CustomInput}
-            validator={[requiredValidator]}
-          />
-
-          <Field
-            label="Address Line1"
-            name="addr1"
-            fieldType=""
-            component={CustomInput}
-            validator={[requiredValidator]}
-          />
-          <Field
-            label="Address Line2"
-            name="addr2"
-            fieldType=""
-            component={CustomInput}
-          />
-
           <div className="fdiv">
             <Field
+              label="Home Address Line1"
+              name="haddr1"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator]}
+            />
+            <Field
+              label="Home Address Line2"
+              name="haddr2"
+              fieldType=""
+              component={CustomInput}
+            />
+            <Field
               label="Landmark"
-              name="addr3"
+              name="haddr3"
               fieldType=""
               component={CustomInput}
             />
             <Field
               label="Zip Code"
-              name="zcode"
+              name="hzcode"
               fieldType=""
               component={CustomInput}
               validator={[requiredValidator, zipValidator]}
             />
             <Field
               label="District"
-              name="district"
+              name="hdistrict"
               fieldType=""
               component={CustomInput}
               validator={[requiredValidator]}
@@ -176,7 +176,7 @@ export default function Profile(props) {
 
             <Field
               label="State"
-              name="state"
+              name="hstate"
               fieldType=""
               component={CustomDropDown}
               options={states}
@@ -184,52 +184,53 @@ export default function Profile(props) {
             />
           </div>
 
-          {/* <Field
-            label="Office Address Line"
-            name="oaddr"
-            fieldType=""
-            component={CustomInput}
-            validator={[requiredValidator]}
-          /> */}
           <div className="fdiv">
-            {/* <Field
+            <Field
+              label="Office Address Line1"
+              name="oaddr1"
+              fieldType=""
+              component={CustomInput}
+              validator={[requiredValidator]}
+            />
+            <Field
+              label="Office Address Line2"
+              name="oaddr2"
+              fieldType=""
+              component={CustomInput}
+            />
+            <Field
+              label="Landmark"
+              name="oaddr3"
+              fieldType=""
+              component={CustomInput}
+            />
+            <Field
               label="Office Zip Code"
               name="ozcode"
               fieldType=""
               component={CustomInput}
               validator={[requiredValidator, zipValidator]}
             />
-
             <Field
-              label="State"
-              name="ostate"
+              label="Office District"
+              name="odistrict"
               fieldType=""
               component={CustomInput}
               validator={[requiredValidator]}
             />
 
-             <Field
-              label="Country"
-              name="ocountry"
+            <Field
+              label="State"
+              name="ostate"
+              fieldType=""
               component={CustomDropDown}
-              options={countries}
-              validator={requiredValidator}
-              
-            />  */}
-            <Field
-              label="Home Address "
-              name="Home Address"
-              component={CustomCheckbox}
-            />
-            <Field
-              label="Office Address "
-              name="Office Address"
-              component={CustomCheckbox}
+              options={states}
+              validator={[requiredValidator]}
             />
           </div>
 
           <button className="btn" disabled={!formRenderProps.allowSubmit}>
-            Save
+            Save Your Changes
           </button>
         </form>
       )}

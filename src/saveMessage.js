@@ -1,14 +1,14 @@
 import React from "react";
 
-function Hello(props) {
+function saveMessage(props) {
   console.log(props.name);
   return (
     <div className="appForm">
       <h1>JusClick</h1>
-      <h2> Your Account is created successfully !!! </h2>
+      <h2> Profile changes saved successfully !!! </h2>
       {/* <Popup /> */}
     </div>
   );
 }
 
-export default Hello;
+export default saveMessage;
