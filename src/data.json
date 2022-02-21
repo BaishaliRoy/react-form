@@ -1,0 +1,24 @@
+{
+  "7875836526": {
+    "name": "Harry Potter",
+    "mobile_no": 7875836526,
+    "haddr1": "4 Privet Drive",
+    "haddr2": "Little Whinging, Surrey",
+    "hlandmark": "12 Picket Post Close",
+    "hdistrict": "Bracknell",
+    "hzip": 411005,
+    "hstate": "Berkshire",
+    "oaddr1": "4 Privet Drive",
+    "oaddr2": "Little Whinging, Surrey",
+    "olandmark": "12 Picket Post Close",
+    "odistrict": "Bracknell",
+    "ozip": 411005,
+    "ostate": "Berkshire"
+  },
+  "7875836521": {
+    "name": "Hermoine Granger",
+    "mobile_no": 8132922696,
+    "Address": "pimpri chinchwad ,pune city",
+    "pin": 411005
+  }
+}

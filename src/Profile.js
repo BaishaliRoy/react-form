@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field } from "@progress/kendo-react-form";
 import { Input, Checkbox } from "@progress/kendo-react-inputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
+
+import Data from "./data.json";
 
 import states from "./states";
 
@@ -36,15 +38,6 @@ const CustomDropDown = ({ options, ...others }) => {
   );
 };
 
-const CustomCheckbox = ({ ...props }) => {
-  return (
-    <div>
-      <Checkbox {...props} />
-      <ValidationMessage {...props} />
-    </div>
-  );
-};
-
 const ValidationMessage = ({ valid, visited, validationMessage }) => {
   return (
     <>
@@ -52,9 +45,6 @@ const ValidationMessage = ({ valid, visited, validationMessage }) => {
     </>
   );
 };
-
-const emailValidator = (value) =>
-  new RegExp(/\S+@\S+\.\S+/).test(value) ? "" : "Please enter a valid email.";
 
 const mobileValidator = (value) =>
   new RegExp("^[0-9]{10,12}$").test(value)
@@ -71,22 +61,13 @@ const requiredValidator = (value) => {
 };
 
 export default function Profile(props) {
+  const [key, setKey] = useState(sessionStorage.getItem("mobile"));
+
+  console.log(sessionStorage.getItem("mobile"));
+
   const handleSubmit = (data) => {
-    console.log(`
-      
-      Mobile: ${data.mobile}
-      Email: ${data.email}
-      Password: ${data.password}
-      Country: ${data.country}
-      Accepted Terms: ${data.acceptedTerms}
-    `);
-
     event.preventDefault();
-
-    console.log(JSON.stringify(data));
-
     sessionStorage.removeItem("mobile");
-
     props.history.push("/save-confirm", { name: data.name });
 
     //
@@ -113,28 +94,12 @@ export default function Profile(props) {
               component={MobileInput}
             />
 
-            {/* <Field
-            label="Email"
-            name="email"
-            fieldType="email"
-            component={CustomInput}
-            validator={[requiredValidator, emailValidator]}
-          /> */}
-
-            {/* <Field
-              label="Password"
-              name="password"
-              fieldType="password"
-              component={CustomInput}
-              validator={requiredValidator}
-              
-            /> */}
-
             <Field
               label="Name"
               name="name"
               fieldType=""
               component={CustomInput}
+              value={Data[key].name}
               validator={[requiredValidator]}
             />
           </div>
@@ -145,18 +110,21 @@ export default function Profile(props) {
               name="haddr1"
               fieldType=""
               component={CustomInput}
+              value={Data[key].haddr1}
               validator={[requiredValidator]}
             />
             <Field
               label="Home Address Line2"
               name="haddr2"
               fieldType=""
+              value={Data[key].haddr2}
               component={CustomInput}
             />
             <Field
               label="Landmark"
               name="haddr3"
               fieldType=""
+              value={Data[key].hlandmark}
               component={CustomInput}
             />
             <Field
@@ -164,6 +132,7 @@ export default function Profile(props) {
               name="hzcode"
               fieldType=""
               component={CustomInput}
+              value={Data[key].haddr2}
               validator={[requiredValidator, zipValidator]}
             />
             <Field
@@ -171,6 +140,7 @@ export default function Profile(props) {
               name="hdistrict"
               fieldType=""
               component={CustomInput}
+              value={Data[key].hdistrict}
               validator={[requiredValidator]}
             />
 
@@ -180,6 +150,7 @@ export default function Profile(props) {
               fieldType=""
               component={CustomDropDown}
               options={states}
+              value={Data[key].hstate}
               validator={[requiredValidator]}
             />
           </div>
