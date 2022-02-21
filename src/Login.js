@@ -1,9 +1,7 @@
 import React, { Component, useState } from "react";
 import { Form, Field } from "@progress/kendo-react-form";
 import { Input } from "@progress/kendo-react-inputs";
-import App from "./App";
-
-import Otp from "./Otp";
+import { Redirect } from "react-router-dom";
 
 const CustomInput = ({ fieldType, ...others }) => {
   return (
@@ -31,7 +29,7 @@ const mobileValidator = (value) =>
     ? ""
     : "Please enter a valid mobile number.";
 
-export default function First(props) {
+export default function Login(props) {
   const [show, setShow] = useState(false);
 
   const handleSubmit = (data) => {
@@ -40,16 +38,19 @@ export default function First(props) {
       Mobile: ${data.mobile}
       Email: ${data.email}
       Password: ${data.password}
-      Country: ${data.country}
-      Accepted Terms: ${data.acceptedTerms}
     `);
 
     event.preventDefault();
-    sessionStorage.setItem("mobile", data.mobile);
 
     setShow(true);
+    sessionStorage.setItem("mobile", data.mobile);
 
-    console.log(JSON.stringify(data));
+    props.history.push("/register-yourself");
+  };
+  const navigate = () => {
+    event.preventDefault();
+
+    props.history.push("/signup");
   };
 
   return (
@@ -57,9 +58,9 @@ export default function First(props) {
       <Form
         onSubmit={handleSubmit}
         render={(formRenderProps) => (
-          <form className="appForm" onSubmit={formRenderProps.onSubmit}>
-            <h1>JusClick </h1>
-            <div className="fdiv">
+          <form className="loginForm" onSubmit={formRenderProps.onSubmit}>
+            <h1>JusClick</h1>
+            <div className="div">
               <Field
                 label="Mobile"
                 name="mobile"
@@ -67,14 +68,23 @@ export default function First(props) {
                 component={CustomInput}
                 validator={[requiredValidator, mobileValidator]}
               />
-              <button className="btn" disabled={!formRenderProps.allowSubmit}>
-                Get OTP
-              </button>
 
-              {/* <div style={{ display: show ? "block" : "none" }}></div> */}
-
-              <Otp control={!show} />
+              <Field
+                label="Password"
+                name="password"
+                fieldType="password"
+                component={CustomInput}
+                validator={requiredValidator}
+              />
             </div>
+            <button className="btn" disabled={!formRenderProps.allowSubmit}>
+              Login
+            </button>
+            OR
+            <button className="btn" type="button" onClick={navigate}>
+              Sign Up
+            </button>
+            {/* <div style={{ display: show ? "block" : "none" }}></div> */}
           </form>
         )}
       ></Form>

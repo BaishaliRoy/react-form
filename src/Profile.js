@@ -70,7 +70,7 @@ const requiredValidator = (value) => {
   return value ? "" : "This field is required";
 };
 
-export default function App(props) {
+export default function Profile(props) {
   const handleSubmit = (data) => {
     console.log(`
       
@@ -229,7 +229,7 @@ export default function App(props) {
           </div>
 
           <button className="btn" disabled={!formRenderProps.allowSubmit}>
-            Create Account
+            Save
           </button>
         </form>
       )}
