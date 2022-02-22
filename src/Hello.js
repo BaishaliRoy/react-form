@@ -1,12 +1,19 @@
 import React from "react";
 
 function Hello(props) {
-  console.log(props.name);
+  const navigate = () => {
+    event.preventDefault();
+
+    props.history.push("/login");
+  };
   return (
-    <div className="appForm">
+    <div className="loginForm">
       <h1>JusClick</h1>
-      <h2> Your Account is created successfully !!! </h2>
+      <h2> Account is created successfully! </h2>
       {/* <Popup /> */}
+      <button className="btn" type="button" onClick={navigate}>
+        Go To Login Page
+      </button>
     </div>
   );
 }
