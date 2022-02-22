@@ -77,11 +77,15 @@ export default function Login(props) {
                 validator={requiredValidator}
               />
             </div>
-            <button className="btn" disabled={!formRenderProps.allowSubmit}>
+            <button
+              className="btn  btn-login"
+              disabled={!formRenderProps.allowSubmit}
+            >
               Login
             </button>
-            OR
-            <button className="btn" type="button" onClick={navigate}>
+            <hr />
+            <p> Don't have an account? SignUp</p>
+            <button className="btn btn-signup" type="button" onClick={navigate}>
               Sign Up
             </button>
             {/* <div style={{ display: show ? "block" : "none" }}></div> */}

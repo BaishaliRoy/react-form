@@ -129,6 +129,15 @@ button.btn:disabled {
   opacity: 0.2;
 }
 
+.btn-login {
+  color: #1c1d1f;
+  background-color: transparent;
+  border: 1px solid #1c1d1f;
+}
+.btn-signup {
+  margin-top: -0.5em;
+}
+
 .required {
   color: #db2269;
   font-size: 0.8em;

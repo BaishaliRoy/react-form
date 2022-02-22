@@ -7,6 +7,7 @@ import First from "./First";
 import Login from "./Login";
 import Profile from "./Profile";
 import saveMessage from "./saveMessage";
+import New from "./newprofile";
 
 const Routes = () => {
   return (

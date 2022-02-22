@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Field } from "@progress/kendo-react-form";
-import { Input, Checkbox } from "@progress/kendo-react-inputs";
+import { Input } from "@progress/kendo-react-inputs";
 import { DropDownList } from "@progress/kendo-react-dropdowns";
 
 import Data from "./data.json";
@@ -68,10 +68,10 @@ export default function Profile(props) {
   const handleSubmit = (data) => {
     event.preventDefault();
     sessionStorage.removeItem("mobile");
-    props.history.push("/save-confirm", { name: data.name });
+    props.history.push("/save-confirm");
 
     //
-    // createAccount().then((data) => {
+    // saveAccount().then((data) => {
     //   if (!data.err) {
     //      redirection to confirm
     //   } else {
@@ -99,8 +99,8 @@ export default function Profile(props) {
               name="name"
               fieldType=""
               component={CustomInput}
-              value={Data[key].name}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].name}
+              editable="true"
             />
           </div>
 
@@ -110,21 +110,20 @@ export default function Profile(props) {
               name="haddr1"
               fieldType=""
               component={CustomInput}
-              value={Data[key].haddr1}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].haddr1}
             />
             <Field
               label="Home Address Line2"
               name="haddr2"
               fieldType=""
-              value={Data[key].haddr2}
+              defaultValue={Data[key].haddr2}
               component={CustomInput}
             />
             <Field
               label="Landmark"
               name="haddr3"
               fieldType=""
-              value={Data[key].hlandmark}
+              defaultValue={Data[key].hlandmark}
               component={CustomInput}
             />
             <Field
@@ -132,16 +131,14 @@ export default function Profile(props) {
               name="hzcode"
               fieldType=""
               component={CustomInput}
-              value={Data[key].haddr2}
-              validator={[requiredValidator, zipValidator]}
+              defaultValue={Data[key].hzip}
             />
             <Field
               label="District"
               name="hdistrict"
               fieldType=""
               component={CustomInput}
-              value={Data[key].hdistrict}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].hdistrict}
             />
 
             <Field
@@ -150,8 +147,7 @@ export default function Profile(props) {
               fieldType=""
               component={CustomDropDown}
               options={states}
-              value={Data[key].hstate}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].hstate}
             />
           </div>
 
@@ -161,33 +157,35 @@ export default function Profile(props) {
               name="oaddr1"
               fieldType=""
               component={CustomInput}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].oaddr1}
             />
             <Field
               label="Office Address Line2"
               name="oaddr2"
               fieldType=""
+              defaultValue={Data[key].oaddr2}
               component={CustomInput}
             />
             <Field
               label="Landmark"
               name="oaddr3"
               fieldType=""
+              value={Data[key].olandmark}
               component={CustomInput}
             />
             <Field
-              label="Office Zip Code"
+              label="Zip Code"
               name="ozcode"
               fieldType=""
               component={CustomInput}
-              validator={[requiredValidator, zipValidator]}
+              defaultValue={Data[key].ozip}
             />
             <Field
-              label="Office District"
+              label="District"
               name="odistrict"
               fieldType=""
               component={CustomInput}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].odistrict}
             />
 
             <Field
@@ -196,11 +194,15 @@ export default function Profile(props) {
               fieldType=""
               component={CustomDropDown}
               options={states}
-              validator={[requiredValidator]}
+              defaultValue={Data[key].ostate}
             />
           </div>
 
-          <button className="btn" disabled={!formRenderProps.allowSubmit}>
+          <button
+            className="btn"
+            type="submit"
+            disabled={!formRenderProps.allowSubmit}
+          >
             Save Your Changes
           </button>
         </form>

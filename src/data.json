@@ -1,24 +1,66 @@
 {
-  "7875836526": {
+  "8981771667": {
     "name": "Harry Potter",
-    "mobile_no": 7875836526,
+    "mobile_no": 8981771667,
     "haddr1": "4 Privet Drive",
     "haddr2": "Little Whinging, Surrey",
     "hlandmark": "12 Picket Post Close",
     "hdistrict": "Bracknell",
     "hzip": 411005,
     "hstate": "Berkshire",
-    "oaddr1": "4 Privet Drive",
-    "oaddr2": "Little Whinging, Surrey",
-    "olandmark": "12 Picket Post Close",
-    "odistrict": "Bracknell",
-    "ozip": 411005,
-    "ostate": "Berkshire"
+    "oaddr1": "Westend Center One, 169/1,",
+    "oaddr2": "Sangvi Kesri Rd, Harmony Society,Aundh",
+    "olandmark": "Ward No. 8, Wireless Colony",
+    "odistrict": "Pune",
+    "ozip": 411007,
+    "ostate": "Maharashtra "
   },
-  "7875836521": {
-    "name": "Hermoine Granger",
+  "7875836526": {
+    "name": "Suraj Shewale",
+    "mobile_no": 7875836526,
+    "haddr1": "14A Dover Lane",
+    "haddr2": "",
+    "hlandmark": "12 Picket Post Close",
+    "hdistrict": "Nashik ",
+    "hzip": 411231,
+    "hstate": "Maharashtra",
+    "oaddr1": "Westend Center One, 169/1,",
+    "oaddr2": "Sangvi Kesri Rd, Harmony Society,Aundh",
+    "olandmark": "Ward No. 8, Wireless Colony",
+    "odistrict": "Pune",
+    "ozip": 411007,
+    "ostate": "Maharashtra "
+  },
+  "8132922696": {
+    "name": "Tejas Bhangle",
     "mobile_no": 8132922696,
-    "Address": "pimpri chinchwad ,pune city",
-    "pin": 411005
+    "haddr1": "1/12A, Shree Nagar",
+    "haddr2": " Near Pune Cantonment, Pune city",
+    "hlandmark": "",
+    "hdistrict": "Pune",
+    "hzip": 411005,
+    "hstate": "Berkshire",
+    "oaddr1": "Westend Center One, 169/1,",
+    "oaddr2": "Sangvi Kesri Rd, Harmony Society,Aundh",
+    "olandmark": "Ward No. 8, Wireless Colony",
+    "odistrict": "Pune",
+    "ozip": 411007,
+    "ostate": "Maharashtra "
+  },
+  "9876543210": {
+    "name": "Meghna Sen",
+    "mobile_no": 9876543210,
+    "haddr1": "DL-206, Sector 2 , Salt Lake",
+    "haddr2": " Near TankNo-9",
+    "hlandmark": "",
+    "hdistrict": "Kolkata",
+    "hzip": 700091,
+    "hstate": "West Bengal",
+    "oaddr1": "Westend Center One, 169/1,",
+    "oaddr2": "Sangvi Kesri Rd, Harmony Society,Aundh",
+    "olandmark": "Ward No. 8, Wireless Colony",
+    "odistrict": "Pune",
+    "ozip": 411007,
+    "ostate": "Maharashtra "
   }
 }
