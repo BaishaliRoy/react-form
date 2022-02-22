@@ -84,7 +84,7 @@ export default function Login(props) {
               Login
             </button>
             <hr />
-            <p> Don't have an account? SignUp</p>
+            <p class="small-label"> Don't have an account? SignUp</p>
             <button className="btn btn-signup" type="button" onClick={navigate}>
               Sign Up
             </button>

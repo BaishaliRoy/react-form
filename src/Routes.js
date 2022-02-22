@@ -16,7 +16,6 @@ const Routes = () => {
         <Route path="/" exact component={Login} />
         <Route path="/login" exact component={Login} />
         <Route path="/signup" exact component={First} />
-        <Route path="/login" exact component={Login} />
         <Route path="/register-yourself" exact component={App} />
         <Route path="/your-profile" exact component={Profile} />
         <Route path="/confirm" exact component={Hello} />

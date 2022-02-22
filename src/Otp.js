@@ -49,5 +49,4 @@ class Otp extends Component {
     );
   }
 }
-
 export default withRouter(Otp);

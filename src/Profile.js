@@ -85,7 +85,7 @@ export default function Profile(props) {
       onSubmit={handleSubmit}
       render={(formRenderProps) => (
         <form className="appForm" onSubmit={formRenderProps.onSubmit}>
-          <h1>JusClick</h1>
+          <h1>JusClick - Edit Profile</h1>
           <div className="fdiv">
             <Field
               label="Mobile"
